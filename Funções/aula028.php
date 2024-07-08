@@ -39,3 +39,12 @@ echo "<br>";
 mediaAluno("Pedro Henrique", 6.7, 8.7, 9.4, 7.4);
 echo "<br>";
 mediaAluno("João da Silva", 2.5, 5.6, 3.2, 2.4);
+
+
+function exibeSenha(){
+    $senha = "*************";
+    echo "Sua senha é $senha";
+}
+
+
+exibeSenha();
