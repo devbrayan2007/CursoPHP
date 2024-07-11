@@ -11,15 +11,16 @@ if(isset($_POST['btn-editar'])){
     $sobrenome = mysqli_escape_string($conexao, $_POST['sobrenome']);
     $email = mysqli_escape_string($conexao, $_POST['email']);
     $idade = mysqli_escape_string($conexao, $_POST['idade']);
+    $id = mysqli_escape_string($conexao, $_POST['id']);
 
-    $sql = "UPDATE clientes SET nome = '$nome', sobrenome = '$sobrenome', email = '$email', idade = '$idade'";
+    $sql = "UPDATE clientes SET nome = '$nome', sobrenome = '$sobrenome', email = '$email', idade = '$idade' WHERE id = '$id'";
     
     if(mysqli_query($conexao, $sql)){
-        $_SESSION['mensagem'] = "Cadastrado com sucesso!";
+        $_SESSION['mensagem'] = "Atualizado com sucesso!";
         header('Location: ../index.php');
     }
     else{
-        $_SESSION['mensagem'] = "Erro ao se cadastrar";
+        $_SESSION['mensagem'] = "Erro ao atualizar";
         header('Location: .../index.php');
     }
 }
